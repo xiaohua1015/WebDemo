@@ -8,19 +8,30 @@
         <servlet-name>GeneralServlet</servlet-name>
         <servlet-class>com.isdev.xiaohua.servlet.GeneralServlet</servlet-class>
     </servlet>
+    <servlet-mapping>
+        <servlet-name>GeneralServlet</servlet-name>
+        <url-pattern>/generalServlet</url-pattern>
+    </servlet-mapping>
+    
     <servlet>
         <servlet-name>TestServlet</servlet-name>
         <servlet-class>com.isdev.xiaohua.servlet.TestServlet</servlet-class>
     </servlet>
-    
-    <servlet-mapping>
-        <servlet-name>GeneralServlet</servlet-name>
-        <url-pattern>/GeneralServlet</url-pattern>
-    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>TestServlet</servlet-name>
-        <url-pattern>/TestServlet</url-pattern>
+        <url-pattern>/testServlet</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ProtoServlet</servlet-name>
+        <servlet-class>com.isdev.xiaohua.servlet.ProtoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ProtoServlet</servlet-name>
+        <url-pattern>/protoServlet</url-pattern>
+    </servlet-mapping>
+    
+    
     
     <welcome-file-list>
         <welcome-file>javaBeanIndex.jsp</welcome-file>

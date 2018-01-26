@@ -1,6 +1,8 @@
 package com.isdev.xiaohua.servlet;
 
 import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -15,6 +17,11 @@ public class TestServlet extends HttpServlet {
     public void init() throws ServletException {}
 
     @Override
+    public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
+        super.service(req, res);
+    }
+
+    @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 //        resp.setCharacterEncoding("GB2312");
 //        resp.setHeader("content-type", "text/html;charset=UTF-8");
@@ -27,11 +34,14 @@ public class TestServlet extends HttpServlet {
         resp.setContentType("text/html;charset=UTF-8");
         System.out.println("xiaohua : "+resp.getCharacterEncoding());
         resp.getWriter().print("这是一个Servlet界面");
+
+        System.out.println("xiaohua getContextPath =" + req.getContextPath());
+        System.out.println("xiaohua servletURI = " + req.getRequestURI());
+//        resp.sendRedirect("https://www.baidu.com");
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
     }
 
     @Override
