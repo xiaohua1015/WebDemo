@@ -29,7 +29,7 @@
 </head>
 <body>
 
-    <%--<form action="javaBeanResult.jsp" method="post">
+    <form action="generalServlet" method="post">
     <table align="center" width="400" height="200" border="1">
         <tr>
             <td align="center" colspan="2" height="40"><b>添加用户信息</b></td>
@@ -53,7 +53,7 @@
         <tr><td align="center" colspan="2"><input type="submit" value="添加"/></td></tr>
     </table>
 
-    <table align="center" width="450" height="250" border="1">
+    <%--<table align="center" width="450" height="250" border="1">
         <tr><td align="center" colspan="2" height="40"><b>新闻发布</b></td></tr>
         <tr>
             <td align="center">标题：</td>
@@ -64,8 +64,8 @@
             <td><textarea name="content" rows="8" cols="40"></textarea></td>
         </tr>
         <tr><td align="center" colspan="2"><input type="submit" value="发布"/></td></tr>
-    </table>
-</form>--%>
+    </table>--%>
+</form>
 
     <jsp:useBean id="date" class="com.isdev.xiaohua.bean.DataBean"/>
 
@@ -81,7 +81,7 @@
         </div>
     </div>
 
-    <form action="javaBeanResult.jsp" method="post">
+    <%--<form action="javaBeanResult.jsp" method="post">
         <div>
             <h1>问卷调查</h1>
             <hr/>
@@ -112,7 +112,7 @@
             </ul>
             <input type="submit" value="提交">
         </div>
-    </form>
+    </form>--%>
 
 
 </body>

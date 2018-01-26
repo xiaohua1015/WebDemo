@@ -20,7 +20,7 @@
     <jsp:useBean id="person" class="com.isdev.xiaohua.bean.Person" scope="page">
         <jsp:setProperty name="person" property="name" param="name"/>
     </jsp:useBean>
-    <%--<table align="center" width="400" height="200" border="1">
+    <table align="center" width="400" height="200" border="1">
         <tr>
             <td align="center" colspan="2" height="40"><b>添加用户信息</b></td>
         </tr>
@@ -41,7 +41,7 @@
             <td><jsp:getProperty name="person" property="add"/></td>
         </tr>
         <tr><td align="center" colspan="2"><input type="submit" value="添加"/></td></tr>
-    </table>--%>
+    </table>
 
     <jsp:useBean id="news" class="com.isdev.xiaohua.bean.News"/>
     <jsp:useBean id="utils" class="com.isdev.xiaohua.bean.Utils"/>
@@ -61,7 +61,7 @@
 
     <jsp:useBean id="paper" class="com.isdev.xiaohua.bean.Paper"/>
     <jsp:setProperty name="paper" property="*"/>
-    <div>
+    <%--<div>
         <h1>调查结果</h1>
         <hr/>
         <ul>
@@ -69,7 +69,7 @@
             <li>你目前所掌握的技术：<%= utils.arr2Str(paper.getTechnics())%></li>
             <li>在学习中感觉有困难的地方：<%= utils.arr2Str(paper.getParts())%></li>
         </ul>
-    </div>
+    </div>--%>
 
 </body>
 </html>

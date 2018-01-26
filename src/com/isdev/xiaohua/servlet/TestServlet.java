@@ -23,6 +23,7 @@ public class TestServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String name = req.getParameter("name");
 //        resp.setCharacterEncoding("GB2312");
 //        resp.setHeader("content-type", "text/html;charset=UTF-8");
         /*
@@ -31,9 +32,10 @@ public class TestServlet extends HttpServlet {
         直接setContentType("UTF-8")之后resp.getCharacterEncoding()和浏览器解析都会是UTF-8
         详细参见：http://blog.csdn.net/xiazdong/article/details/7217022
         */
-        resp.setContentType("text/html;charset=UTF-8");
-        System.out.println("xiaohua : "+resp.getCharacterEncoding());
-        resp.getWriter().print("这是一个Servlet界面");
+//        resp.setContentType("text/html;charset=UTF-8");
+        System.out.println("xiaohua resp: "+resp.getCharacterEncoding());
+        System.out.println("xiaohua req: "+ req.getCharacterEncoding());
+        resp.getWriter().print("这是一个Servlet界面 from:");
 
         System.out.println("xiaohua getContextPath =" + req.getContextPath());
         System.out.println("xiaohua servletURI = " + req.getRequestURI());

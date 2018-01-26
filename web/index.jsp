@@ -60,6 +60,8 @@
       请输入姓名：<input name="user" type="text" value="">
       <input type="submit" value="确定" />
     </form>
+
+    <h2>你是本网站的第【<%= application.getAttribute("count")%>】位访客！</h2>
   <%}else{%>
     欢迎【<b><%= user%></b>】再次光临
     您注册的时间是：<%= date%>
