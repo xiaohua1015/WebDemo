@@ -31,6 +31,15 @@
         <url-pattern>/protoServlet</url-pattern>
     </servlet-mapping>
     
+    <servlet>
+        <servlet-name>AddBookServlet</servlet-name>
+        <servlet-class>com.isdev.xiaohua.servlet.AddBookServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddBookServlet</servlet-name>
+        <url-pattern>/addBookServlet</url-pattern>
+    </servlet-mapping>
+    
     <filter>
         <filter-name>CountFilter</filter-name>
         <filter-class>com.isdev.xiaohua.filter.CountFilter</filter-class>
@@ -58,6 +67,6 @@
     </filter-mapping>
 
     <welcome-file-list>
-        <welcome-file>javaBeanIndex.jsp</welcome-file>
+        <welcome-file>jdbc/index.jsp</welcome-file>
     </welcome-file-list>
 </web-app>

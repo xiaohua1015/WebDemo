@@ -11,7 +11,6 @@ import java.io.PrintWriter;
 /**
  * Created by lsh134667 on 2018/1/22.
  */
-@WebServlet(name = "GeneralServlet")
 public class GeneralServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //        response.sendRedirect("detectEmail.jsp");
