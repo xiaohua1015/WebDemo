@@ -39,6 +39,15 @@
         <servlet-name>AddBookServlet</servlet-name>
         <url-pattern>/addBookServlet</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>FindBookServlet</servlet-name>
+        <servlet-class>com.isdev.xiaohua.servlet.FindBookServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FindBookServlet</servlet-name>
+        <url-pattern>/findBookServlet</url-pattern>
+    </servlet-mapping>
     
     <filter>
         <filter-name>CountFilter</filter-name>

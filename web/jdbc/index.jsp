@@ -33,5 +33,6 @@
             <tr><td align="center" colspan="2"><input type="submit" value="提交"/></td></tr>
         </table>
     </form>
+    <center><a href="/findBookServlet">查询所有图书</a></center>
 </body>
 </html>
