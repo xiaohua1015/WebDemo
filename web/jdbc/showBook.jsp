@@ -42,5 +42,6 @@
             }
         %>
     </table>
+    <center><a href="/jdbc/index.jsp">返回</a> </center>
 </body>
 </html>
