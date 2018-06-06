@@ -43,6 +43,7 @@ public class FindBookServlet extends HttpServlet {
             System.out.println("查询失败");
         }
         request.getRequestDispatcher("/jdbc/showBook.jsp").forward(request, response);
+//        response.sendRedirect("/jdbc/showBook.jsp");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
