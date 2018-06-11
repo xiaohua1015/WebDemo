@@ -4,6 +4,7 @@ package com.isdev.xiaohua.bean;
  * Created by Administrator on 2018/5/28.
  */
 public class Book {
+    public static final int PAGE_SIZE = 3;
     private int id;
     private String name;
     private double price;
