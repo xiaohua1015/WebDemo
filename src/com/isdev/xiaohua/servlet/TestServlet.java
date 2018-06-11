@@ -23,6 +23,7 @@ public class TestServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.setHeader("Access-Control-Allow-Origin", "*");
         String name = req.getParameter("name");
 //        resp.setCharacterEncoding("GB2312");
 //        resp.setHeader("content-type", "text/html;charset=UTF-8");
@@ -40,6 +41,7 @@ public class TestServlet extends HttpServlet {
         System.out.println("xiaohua getContextPath =" + req.getContextPath());
         System.out.println("xiaohua servletURI = " + req.getRequestURI());
 //        resp.sendRedirect("https://www.baidu.com");
+
     }
 
     @Override

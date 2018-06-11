@@ -12,8 +12,8 @@
     <title>展示查询结果</title>
 </head>
 <body>
-    <table align="center" width="450" border="1">
-        <tr><td colspan="6" align="center"><h2>所有图书信息</h2></td></tr>
+    <table align="center" width="600" border="1">
+        <tr><td colspan="7" align="center"><h2>所有图书信息</h2></td></tr>
         <tr align="center">
             <td>ID</td>
             <td>书名</td>
@@ -21,6 +21,7 @@
             <td>数量</td>
             <td>作者</td>
             <td>修改数量</td>
+            <td>删除</td>
         </tr>
         <%
             List<Book> list = (List<Book>) request.getAttribute("booklist");
@@ -44,6 +45,7 @@
                     <input type="submit" value="修改">
                 </form>
             </td>
+            <td><a href="/deleteBookServlet?id=<%=book.getId()%>">删除</a></td>
         </tr>
         <%
                 }

@@ -12,27 +12,23 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 /**
- * Created by Administrator on 2018/6/7.
+ * Created by Administrator on 2018/6/11.
  */
-@WebServlet(name = "UpdateBookServlet")
-public class UpdateBookServlet extends HttpServlet {
+@WebServlet(name = "DeleteBookServlet")
+public class DeleteBookServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String url = "jdbc:mysql://localhost:3306/test?setUnicode=true&characterEncoding=utf-8";
+        String username = "root";
+        String password = "root";
         try {
             int id = Integer.parseInt(request.getParameter("id"));
-            int bookCount = Integer.parseInt(request.getParameter("bookCount"));
-            Class.forName("com.mysql.jdbc.Driver");
-            String url = "jdbc:mysql://localhost:3306/test?characterEncoding=UTF-8";
-            String username = "root";
-            String password = "root";
             Connection conn = DriverManager.getConnection(url, username, password);
-            String sql = "update book set bookCount = ? where id = ?";
-            PreparedStatement pst = conn.prepareStatement(sql);
-            pst.setInt(1,bookCount);
-            pst.setInt(2,id);
+            PreparedStatement pst = conn.prepareStatement("delete from book where id = ?");
+            pst.setInt(1, id);
             pst.executeUpdate();
             pst.close();
             conn.close();
-        } catch (Exception e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         response.sendRedirect("/findBookServlet");

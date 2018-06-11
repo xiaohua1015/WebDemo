@@ -57,6 +57,15 @@
         <servlet-name>UpdateBookServlet</servlet-name>
         <url-pattern>/updateBookServlet</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DeleteBookServlet</servlet-name>
+        <servlet-class>com.isdev.xiaohua.servlet.DeleteBookServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteBookServlet</servlet-name>
+        <url-pattern>/deleteBookServlet</url-pattern>
+    </servlet-mapping>
     
     <filter>
         <filter-name>CountFilter</filter-name>
@@ -85,6 +94,6 @@
     </filter-mapping>
 
     <welcome-file-list>
-        <welcome-file>jdbc/index.jsp</welcome-file>
+        <welcome-file>jdbc/showBook.jsp</welcome-file>
     </welcome-file-list>
 </web-app>
