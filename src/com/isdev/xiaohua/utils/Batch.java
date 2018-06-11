@@ -1,4 +1,4 @@
-package com.isdev.xiaohua.test;
+package com.isdev.xiaohua.utils;
 
 import java.io.UnsupportedEncodingException;
 import java.sql.Connection;
