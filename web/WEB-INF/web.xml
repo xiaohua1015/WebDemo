@@ -94,6 +94,6 @@
     </filter-mapping>
 
     <welcome-file-list>
-        <welcome-file>ajax/JSTLTest.jsp</welcome-file>
+        <welcome-file>ajax/Test.jsp</welcome-file>
     </welcome-file-list>
 </web-app>

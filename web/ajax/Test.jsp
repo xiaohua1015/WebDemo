@@ -10,13 +10,29 @@
 <head>
     <title>Title</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style type="text/css">
+        #toolTip{
+            position:absolute;;
+            left: 331px;
+            top: 39px;
+            width: 98px;
+            height: 48px;
+            padding-top: 45px;
+            padding-left: 25px;
+            padding-right: 25px;
+            z-index: 1;
+            display: none;
+            color: red;
+        }
+    </style>
+
     <script type="text/javascript">
-        let httpRequest = false;
-        function createHttpRequest() {
-            if (window.XMLHttpRequest){
+        var httpRequest = null;
+        function createHttpRequest(url){
+            if(window.XMLHttpRequest) {
                 httpRequest = new XMLHttpRequest();
-            } else if (window.ActiveXObject) {
-                try {
+            } else {
+                try{
                     httpRequest = new ActiveXObject("Msxml2.XMLHTTP");
                 } catch (e) {
                     try {
@@ -24,41 +40,41 @@
                     } catch (e) {}
                 }
             }
-
             if (!httpRequest) {
-                alert("不能创建httprequest对象实例！！！");
-                return false;
+                alert("XMLHTttpRequest创建失败");
             } else {
-                // alert("创建成功");
+                httpRequest.onreadystatechange = getResult;
+                httpRequest.open("GET", url, true);
+                httpRequest.send(null);
             }
-            console.log("1214");
-            httpRequest.onreadystatechange = getResult;
-            httpRequest.open("GET", "http://localhost:8080/testServlet", true);
-            httpRequest.send(null);
         }
 
         function getResult() {
-            console.log("getResult");
-            if (httpRequest) {
-                console.log("httpRequest");
-            }
             if (httpRequest.readyState == 4) {
-                console.log("readyState");
                 if (httpRequest.status == 200) {
-                    console.log(httpRequest.responseText);
+                    document.getElementById("toolTip").innerHTML=httpRequest.responseText;
+                    document.getElementById("toolTip").style.display = "block";
                 } else {
-                    console.log(httpRequestp.statusText);
+                    console.log("httpRequest.statusText = ", httpRequest.statusText);
                 }
             } else {
-                console.log("readyState = ", httpRequest.readyState);
+                console.log("httpRequest.readyState = ", httpRequest.readyState);
+            }
+        }
+
+        function checkUser(userName) {
+            if (userName && userName.value) {
+                createHttpRequest("/ajax/checkUser.jsp?user="+userName.value);
+            } else {
+                alert("请输入用户名");
             }
         }
     </script>
 </head>
 <body>
-    <h1>我的第一个标题</h1>
-    <form method="get" onsubmit="createHttpRequest()">
-        <input type="submit" name="submit">
+    <form method="post" action="" name = "form">
+        用户名：<input name="username" type="text" id="username" size="32" onblur="checkUser(form.username)"> <div id="toolTip"></div><br>
+        密码：<input name="password" type="password" id="password" size="35">
     </form>
 </body>
 </html>
